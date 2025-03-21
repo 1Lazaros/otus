@@ -58,49 +58,50 @@ public class Main {
                         }
 
                         System.out.println("Как зовут животное?");
-                        String animalName = scanner.nextLine();
-//
-//                  NumberTools validateAge = new NumberTools();
-//                        String animalAge = null;
-//                        do {
-//                            System.out.println("Сколько лет животному?");
-//                            animalAge = scanner.nextLine();
-//                            if (validateAge.isNumber(animalAge))
-//                                System.out.println("Недопустимое значение для возраста. Повторите ввод.");
-//
-//                        } while (validateAge.isNumber(animalAge));
-//
-//                        NumberTools validateWeight = new NumberTools();
-//                        String animalWeight = null;
-//                        do {
-//                            System.out.println("Сколько весит животное?");
-//                            animalWeight = scanner.nextLine();
-//                            if (validateWeight.isNumber(animalWeight))
-//                                System.out.println("Недопустимое значение для веса. Повторите ввод.");
-//
-//                        } while (validateWeight.isNumber(animalWeight));
-//                        System.out.println("Какой цвет животного?");
-//                        String color = scanner.nextLine();
-//
-//                        AnimalFactory animalFactory = new AnimalFactory(animalName, Integer.parseInt(animalAge), Integer.parseInt(animalWeight), color);
-//                        Animal animal = animalFactory.create(AnimalTypeData.valueOf(type));
-//                        animals.add(animal);
-//                        animal.say();
-//
-                    }
+                        String animalName = scanner.next();
 
-                }
-                    case LIST: {
-                        for (Animal animal : animals) {
-                            System.out.println(animal.toString());
-                        }
+                        NumberTools validateAge = new NumberTools();
+                        String animalAge = null;
+                        do {
+                            System.out.println("Сколько лет животному?");
+                            animalAge = scanner.next();
+                            if (!validateAge.isNumber(animalAge))
+                                System.out.println("Недопустимое значение для возраста. Повторите ввод.");
+
+                        } while (!validateAge.isNumber(animalAge));
+
+                        NumberTools validateWeight = new NumberTools();
+                        String animalWeight = null;
+                        do {
+                            System.out.println("Сколько весит животное?");
+                            animalWeight = scanner.next();
+                            if (!validateWeight.isNumber(animalWeight))
+                                System.out.println("Недопустимое значение для веса. Повторите ввод.");
+
+                        } while (!validateWeight.isNumber(animalWeight));
+                        System.out.println("Какой цвет животного?");
+                        String color = scanner.next();
+
+                        AnimalFactory animalFactory = new AnimalFactory(animalName, Integer.parseInt(animalAge), Integer.parseInt(animalWeight), color);
+                        Animal animal = animalFactory.create(AnimalTypeData.valueOf(animalType));
+                        animals.add(animal);
+                        animal.say();
                         break;
                     }
-                    case EXIT: {
-                        System.exit(0);
-                    }
 
                 }
+
+                case LIST: {
+                    for (Animal animal : animals) {
+                        System.out.println(animal.toString());
+                    }
+                    break;
+                }
+                case EXIT: {
+                    System.exit(0);
+                }
+
             }
         }
     }
+}
