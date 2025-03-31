@@ -49,17 +49,6 @@ public abstract class Animal {
         System.out.println("Я говорю");
     }
 
-    public void go() {
-        System.out.println("Я иду");
-    }
-
-    public void drink() {
-        System.out.println("Я пью");
-    }
-
-    public void eat() {
-        System.out.println("Я ем");
-    }
 
     public String getYearsText(int age) {
         if (age == 1) {

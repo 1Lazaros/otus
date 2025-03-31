@@ -43,7 +43,7 @@ public class Main {
                         for (AnimalTypeData animalTypeData : AnimalTypeData.values()) {
                             nameStr.add(animalTypeData.name().toLowerCase());
                         }
-                        System.out.println(String.format("Какое животное вы хотите добавить" + Arrays.toString(AnimalTypeData.values()) +" : %s", String.join("/", type)));
+                        System.out.println(String.format("Какое животное вы хотите добавить" + Arrays.toString(AnimalTypeData.values())));// + ": %s", String.join("/", type)));
                         String animalType = scanner.next().trim().toUpperCase();
                         String animalTypeUpperCase = animalType.toUpperCase();
                         boolean isTypeExist = false;
@@ -54,8 +54,8 @@ public class Main {
                             }
                         }
                         if (!isTypeExist) {
-                            System.out.printf("Тип %s не поддерживается \n", animalType);
-
+                            System.out.printf("Допустимые типы животных:" + Arrays.toString(AnimalTypeData.values()) + ".");
+                            continue;
                         }
 
                         System.out.println("Как зовут животное?");
