@@ -5,6 +5,7 @@ import factory.AnimalFactory;
 import tools.NumberTools;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -42,7 +43,7 @@ public class Main {
                         for (AnimalTypeData animalTypeData : AnimalTypeData.values()) {
                             nameStr.add(animalTypeData.name().toLowerCase());
                         }
-                        System.out.println(String.format("Какое животное вы хотите добавить cat / dog / duck: %s", String.join("/", type)));
+                        System.out.println(String.format("Какое животное вы хотите добавить" + Arrays.toString(AnimalTypeData.values()) +" : %s", String.join("/", type)));
                         String animalType = scanner.next().trim().toUpperCase();
                         String animalTypeUpperCase = animalType.toUpperCase();
                         boolean isTypeExist = false;
