@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    ArrayList<String> animals = new ArrayList<String>();
+    private ArrayList<String> animals = new ArrayList<String>();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
