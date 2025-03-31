@@ -62,13 +62,11 @@ public abstract class Animal {
     }
 
     public String getYearsText(int age) {
-        if (age ==  1) {
+        if (age == 1) {
             return "год";
-        }
-        else if (age >= 2 && age <= 4) {
+        } else if (age >= 2 && age <= 4) {
             return "года";
-        }
-        else {
+        } else {
             return "лет";
         }
     }

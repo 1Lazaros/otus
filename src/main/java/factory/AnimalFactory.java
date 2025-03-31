@@ -12,12 +12,13 @@ public class AnimalFactory {
     private int weight;
     private String color;
 
-    public AnimalFactory(String name, int age, int weight, String color){
-this.name = name;
-this.age = age;
-this.weight = weight;
-this.color = color;
+    public AnimalFactory(String name, int age, int weight, String color) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.color = color;
     }
+
     public Animal create(AnimalTypeData animalTypeData) {
         switch (animalTypeData) {
             case CAT: {

@@ -9,7 +9,7 @@ public class Duck extends Animal implements Flyable {
     }
 
     @Override
-    public void say(){
+    public void say() {
         System.out.println("Кря");
     }
 

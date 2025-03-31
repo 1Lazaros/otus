@@ -5,8 +5,8 @@ public enum Commands {
     LIST,
     EXIT;
 
-    public static Commands fromString(String command){
-        try{
+    public static Commands fromString(String command) {
+        try {
             return Commands.valueOf(command.trim().toUpperCase());
         } catch (IllegalArgumentException e) {
             System.out.println("Команда " + command + " команда не опознана");
